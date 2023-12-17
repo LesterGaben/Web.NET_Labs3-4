@@ -1,0 +1,12 @@
+C:\Users\ARTEM\Documents\Projects\5 semester\Web.NET_Labs3-4\HospitalRegistrySystem\HospitalRegistrySystem.BLL\bin\Debug\net7.0\HospitalRegistrySystem.BLL.deps.json
+C:\Users\ARTEM\Documents\Projects\5 semester\Web.NET_Labs3-4\HospitalRegistrySystem\HospitalRegistrySystem.BLL\bin\Debug\net7.0\HospitalRegistrySystem.BLL.dll
+C:\Users\ARTEM\Documents\Projects\5 semester\Web.NET_Labs3-4\HospitalRegistrySystem\HospitalRegistrySystem.BLL\bin\Debug\net7.0\HospitalRegistrySystem.BLL.pdb
+C:\Users\ARTEM\Documents\Projects\5 semester\Web.NET_Labs3-4\HospitalRegistrySystem\HospitalRegistrySystem.BLL\obj\Debug\net7.0\HospitalRegistrySystem.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ARTEM\Documents\Projects\5 semester\Web.NET_Labs3-4\HospitalRegistrySystem\HospitalRegistrySystem.BLL\obj\Debug\net7.0\HospitalRegistrySystem.BLL.AssemblyInfoInputs.cache
+C:\Users\ARTEM\Documents\Projects\5 semester\Web.NET_Labs3-4\HospitalRegistrySystem\HospitalRegistrySystem.BLL\obj\Debug\net7.0\HospitalRegistrySystem.BLL.AssemblyInfo.cs
+C:\Users\ARTEM\Documents\Projects\5 semester\Web.NET_Labs3-4\HospitalRegistrySystem\HospitalRegistrySystem.BLL\obj\Debug\net7.0\HospitalRegistrySystem.BLL.csproj.CoreCompileInputs.cache
+C:\Users\ARTEM\Documents\Projects\5 semester\Web.NET_Labs3-4\HospitalRegistrySystem\HospitalRegistrySystem.BLL\obj\Debug\net7.0\HospitalRegistrySystem.BLL.sourcelink.json
+C:\Users\ARTEM\Documents\Projects\5 semester\Web.NET_Labs3-4\HospitalRegistrySystem\HospitalRegistrySystem.BLL\obj\Debug\net7.0\HospitalRegistrySystem.BLL.dll
+C:\Users\ARTEM\Documents\Projects\5 semester\Web.NET_Labs3-4\HospitalRegistrySystem\HospitalRegistrySystem.BLL\obj\Debug\net7.0\refint\HospitalRegistrySystem.BLL.dll
+C:\Users\ARTEM\Documents\Projects\5 semester\Web.NET_Labs3-4\HospitalRegistrySystem\HospitalRegistrySystem.BLL\obj\Debug\net7.0\HospitalRegistrySystem.BLL.pdb
+C:\Users\ARTEM\Documents\Projects\5 semester\Web.NET_Labs3-4\HospitalRegistrySystem\HospitalRegistrySystem.BLL\obj\Debug\net7.0\ref\HospitalRegistrySystem.BLL.dll

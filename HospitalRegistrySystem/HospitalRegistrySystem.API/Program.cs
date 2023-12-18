@@ -1,3 +1,8 @@
+using HospitalRegistrySystem.DAL.Context;
+using HospitalRegistrySystem.DAL.Repositories.Inerfaces;
+using HospitalRegistrySystem.DAL.Repositories;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +11,12 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<HospitalRegistrySystemContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("HospitalRegistrySystemDb")));
+
+// Ðåºñòðàö³ÿ GenericRepository
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
 var app = builder.Build();
 

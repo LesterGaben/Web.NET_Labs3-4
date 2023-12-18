@@ -1,6 +1,8 @@
 ﻿using HospitalRegistrySystem.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using System.Reflection.Emit;
 
 namespace HospitalRegistrySystem.DAL.Context.Configurations {
     public class PatientConfig : IEntityTypeConfiguration<Patient> {
@@ -18,8 +20,13 @@ namespace HospitalRegistrySystem.DAL.Context.Configurations {
                 .IsRequired()
                 .HasMaxLength(100);
 
+            var dateOnlyConverter = new ValueConverter<DateOnly, DateTime>(
+            dateOnly => dateOnly.ToDateTime(TimeOnly.MinValue),
+            dateTime => DateOnly.FromDateTime(dateTime));
+
             builder.Property(p => p.DateOfBirth)
-                .IsRequired();
+                .IsRequired()
+                .HasConversion(dateOnlyConverter);
 
             builder.Property(p => p.Address)
                 .IsRequired()

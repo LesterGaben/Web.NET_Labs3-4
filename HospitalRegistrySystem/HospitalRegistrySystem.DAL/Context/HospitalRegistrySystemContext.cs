@@ -13,12 +13,7 @@ namespace HospitalRegistrySystem.DAL.Context {
         public virtual DbSet<PatientCard> PatientCards { get; set; }
 
         public HospitalRegistrySystemContext(DbContextOptions<HospitalRegistrySystemContext> options): base(options) {
-            Patients = Set<Patient>();
-            Doctors = Set<Doctor>();
-            Schedules = Set<Schedule>();
-            Appointments = Set<Appointment>();
-            MedicalConclusions = Set<MedicalConclusion>();
-            PatientCards = Set<PatientCard>();
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {

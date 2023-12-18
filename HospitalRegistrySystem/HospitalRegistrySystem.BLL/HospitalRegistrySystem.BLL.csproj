@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HospitalRegistrySystem.API\HospitalRegistrySystem.API.csproj" />
+    <ProjectReference Include="..\HospitalRegistrySystem.DAL\HospitalRegistrySystem.DAL.csproj" />
+  </ItemGroup>
+
 </Project>

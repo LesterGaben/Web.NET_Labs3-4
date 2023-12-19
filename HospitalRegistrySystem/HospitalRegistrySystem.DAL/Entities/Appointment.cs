@@ -1,9 +1,4 @@
 ﻿using HospitalRegistrySystem.DAL.Entities.Abstract;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HospitalRegistrySystem.DAL.Entities {
     public class Appointment : BaseEntity {

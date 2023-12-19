@@ -5,7 +5,6 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace HospitalRegistrySystem.DAL.Context.Configurations {
     public class MedicalConclusionConfig : IEntityTypeConfiguration<MedicalConclusion> {
         public void Configure(EntityTypeBuilder<MedicalConclusion> builder) {
-
             builder.HasKey(mc => mc.Id);
 
             builder.Property(mc => mc.Id)
@@ -13,15 +12,18 @@ namespace HospitalRegistrySystem.DAL.Context.Configurations {
 
             builder.HasOne(mc => mc.Doctor)
                 .WithMany(d => d.MedicalConclusions)
-                .HasForeignKey(mc => mc.DoctorId);
+                .HasForeignKey(mc => mc.DoctorId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasOne(mc => mc.Patient)
                 .WithMany(p => p.MedicalConclusions)
-                .HasForeignKey(mc => mc.PatientId);
+                .HasForeignKey(mc => mc.PatientId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasOne(mc => mc.PatientCard)
                 .WithMany(pc => pc.MedicalConclusions)
-                .HasForeignKey(mc => mc.PatientCardId);
+                .HasForeignKey(mc => mc.PatientCardId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.Property(mc => mc.Content)
                 .IsRequired()
@@ -29,7 +31,6 @@ namespace HospitalRegistrySystem.DAL.Context.Configurations {
 
             builder.Property(mc => mc.DateTime)
                 .IsRequired();
-
         }
     }
 }

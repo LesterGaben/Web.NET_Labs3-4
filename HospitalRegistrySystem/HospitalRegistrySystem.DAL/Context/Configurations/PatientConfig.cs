@@ -12,10 +12,6 @@ namespace HospitalRegistrySystem.DAL.Context.Configurations {
             builder.Property(p => p.Id)
                 .ValueGeneratedOnAdd();
 
-            builder.HasOne(p => p.PatientCard)
-                .WithOne(pc => pc.Patient)
-                .HasForeignKey<Patient>(p => p.PatientCardId);
-
             builder.Property(p => p.FullName)
                 .IsRequired()
                 .HasMaxLength(100);

@@ -1,31 +1,47 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using HospitalRegistrySystem.DAL.Entities;
 using HospitalRegistrySystem.BLL.Services.Interfaces;
-using HospitalRegistrySystem.BLL.DTOs;
+using HospitalRegistrySystem.BLL.DTOs.Patient;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace HospitalRegistrySystem.API.Controllers {
-    
+
     [ApiController]
-    [Route("pacients")]
+    [Route("patients")]
     public class PatientController : ControllerBase {
 
-        private readonly IGenericService<Patient, PatientDTO> _patientService;
+        private readonly IPatientService _patientService;
 
-        public PatientController(IGenericService<Patient, PatientDTO> patientService) {
+        public PatientController(IPatientService patientService) {
             _patientService = patientService;
         }
 
+
         [HttpGet]
-        public IActionResult GetPacient() {
-            return Ok("Artem");
+        public async Task<IActionResult> GetAll() {
+            return Ok(await _patientService.GetAllAsync());
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int id) {
+            return Ok(await _patientService.GetByIdAsync(id));
             
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreatePatient(PatientDTO patient) {
+        public async Task<IActionResult> Create(CreateUpdatePatientDTO patient) {
             return Ok(await _patientService.CreateAsync(patient));
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update([FromRoute]int id, CreateUpdatePatientDTO patient) {
+            return Ok(await _patientService.UpdateAsync(id, patient));
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id) {
+            await _patientService.DeleteAsync(id);
+            return NoContent();
+        }
+
     }
 }

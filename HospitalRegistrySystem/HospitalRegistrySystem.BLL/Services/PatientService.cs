@@ -1,40 +1,55 @@
 ﻿using AutoMapper;
-using HospitalRegistrySystem.BLL.DTOs;
-using HospitalRegistrySystem.BLL.Services.Abstract;
+using HospitalRegistrySystem.BLL.DTOs.Patient;
 using HospitalRegistrySystem.BLL.Services.Interfaces;
-using HospitalRegistrySystem.DAL.Context;
 using HospitalRegistrySystem.DAL.Entities;
 using HospitalRegistrySystem.DAL.Repositories.Inerfaces;
 
-namespace HospitalRegistrySystem.BLL.Services {
-    public class PatientService<TEntity, TDto> : BaseService<TEntity> , IGenericService<TEntity, TDto> where TEntity : Patient where TDto : PatientDTO {
+namespace HospitalRegistrySystem.BLL.Services
+{
+    public class PatientService: IPatientService {
 
-        public PatientService(IGenericRepository<TEntity> repository, IMapper mapper) : base(repository, mapper) {
+        private readonly IGenericRepository<Patient> _repository;
+        private readonly IMapper _mapper;
 
+        public PatientService(IGenericRepository<Patient> repository, IMapper mapper)  {
+            _repository = repository;
+            _mapper = mapper;
         }
 
-        public Task<TDto> GetAsync(int id) {
-            throw new NotImplementedException();
+        public async Task<IEnumerable<PatientDTO>> GetAllAsync() {
+            var entities = await _repository.GetAllAsync();
+            return _mapper.Map<IEnumerable<PatientDTO>>(entities);
         }
 
-        public async Task<TDto> CreateAsync(TDto dto) {
-            var entity = _mapper.Map<TEntity>(dto);
+        public async Task<PatientDTO> GetByIdAsync(int id) {
+            var entity = await _repository.GetByIdAsync(id);
+            return _mapper.Map<PatientDTO>(entity);
+        }
+
+        public async Task<int> CreateAsync(CreateUpdatePatientDTO dto) {
+            var entity = _mapper.Map<Patient>(dto);
             await _repository.AddAsync(entity);
-            return _mapper.Map<TDto>(entity);
+            return entity.Id;
         }
 
-        public Task DeleteAsync(int id) {
-            throw new NotImplementedException();
+        public async Task<PatientDTO> UpdateAsync(int id, CreateUpdatePatientDTO dto) {
+            var entity = await _repository.GetByIdAsync(id);
+
+            // Перевірка на існування сутності
+            if (entity == null) {
+                // Обробка випадку, коли сутність не знайдена
+                // Наприклад, можна повернути null або викликати помилку
+            }
+
+            _mapper.Map(dto, entity);
+            await _repository.UpdateAsync(entity);
+
+            return _mapper.Map<PatientDTO>(entity);
         }
 
-        public Task<IEnumerable<TDto>> GetAllAsync() {
-            throw new NotImplementedException();
-        }
-
-        
-
-        public Task<TDto> UpdateAsync(TDto dto) {
-            throw new NotImplementedException();
+        public async Task DeleteAsync(int id) {
+            var entity = await _repository.GetByIdAsync(id);
+            await _repository.DeleteAsync(entity);
         }
     }
 }

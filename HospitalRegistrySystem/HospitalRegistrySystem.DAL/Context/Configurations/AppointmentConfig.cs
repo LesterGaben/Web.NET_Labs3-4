@@ -17,7 +17,8 @@ namespace HospitalRegistrySystem.DAL.Context.Configurations {
 
             builder.HasOne(a => a.Patient)
                 .WithMany(p => p.Appointments)
-                .HasForeignKey(a => a.PatientId);
+                .HasForeignKey(a => a.PatientId)
+                .IsRequired(false);
 
             builder.Property(a => a.DateTime)
                 .IsRequired();

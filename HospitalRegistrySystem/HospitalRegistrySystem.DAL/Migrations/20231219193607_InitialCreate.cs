@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace HospitalRegistrySystem.DAL.Migrations
 {
     /// <inheritdoc />
-    public partial class Init : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -27,16 +27,19 @@ namespace HospitalRegistrySystem.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "PatientCards",
+                name: "Patients",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    PatientId = table.Column<int>(type: "int", nullable: false)
+                    FullName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PatientCards", x => x.Id);
+                    table.PrimaryKey("PK_Patients", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -56,29 +59,6 @@ namespace HospitalRegistrySystem.DAL.Migrations
                         name: "FK_Schedules_Doctors_DoctorId",
                         column: x => x.DoctorId,
                         principalTable: "Doctors",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Patients",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    FullName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    PatientCardId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Patients", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Patients_PatientCards_PatientCardId",
-                        column: x => x.PatientCardId,
-                        principalTable: "PatientCards",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -104,6 +84,25 @@ namespace HospitalRegistrySystem.DAL.Migrations
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Appointments_Patients_PatientId",
+                        column: x => x.PatientId,
+                        principalTable: "Patients",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "PatientCards",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PatientId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PatientCards", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_PatientCards_Patients_PatientId",
                         column: x => x.PatientId,
                         principalTable: "Patients",
                         principalColumn: "Id",
@@ -142,7 +141,7 @@ namespace HospitalRegistrySystem.DAL.Migrations
                         column: x => x.PatientId,
                         principalTable: "Patients",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -171,9 +170,9 @@ namespace HospitalRegistrySystem.DAL.Migrations
                 column: "PatientId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Patients_PatientCardId",
-                table: "Patients",
-                column: "PatientCardId",
+                name: "IX_PatientCards_PatientId",
+                table: "PatientCards",
+                column: "PatientId",
                 unique: true);
 
             migrationBuilder.CreateIndex(
@@ -195,13 +194,13 @@ namespace HospitalRegistrySystem.DAL.Migrations
                 name: "Schedules");
 
             migrationBuilder.DropTable(
-                name: "Patients");
+                name: "PatientCards");
 
             migrationBuilder.DropTable(
                 name: "Doctors");
 
             migrationBuilder.DropTable(
-                name: "PatientCards");
+                name: "Patients");
         }
     }
 }

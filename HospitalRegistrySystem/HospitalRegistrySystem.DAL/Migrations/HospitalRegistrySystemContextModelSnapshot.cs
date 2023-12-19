@@ -133,18 +133,12 @@ namespace HospitalRegistrySystem.DAL.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("PatientCardId")
-                        .HasColumnType("int");
-
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("PatientCardId")
-                        .IsUnique();
 
                     b.ToTable("Patients");
                 });
@@ -161,6 +155,9 @@ namespace HospitalRegistrySystem.DAL.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PatientId")
+                        .IsUnique();
 
                     b.ToTable("PatientCards");
                 });
@@ -225,7 +222,7 @@ namespace HospitalRegistrySystem.DAL.Migrations
                     b.HasOne("HospitalRegistrySystem.DAL.Entities.Patient", "Patient")
                         .WithMany("MedicalConclusions")
                         .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Doctor");
@@ -235,15 +232,15 @@ namespace HospitalRegistrySystem.DAL.Migrations
                     b.Navigation("PatientCard");
                 });
 
-            modelBuilder.Entity("HospitalRegistrySystem.DAL.Entities.Patient", b =>
+            modelBuilder.Entity("HospitalRegistrySystem.DAL.Entities.PatientCard", b =>
                 {
-                    b.HasOne("HospitalRegistrySystem.DAL.Entities.PatientCard", "PatientCard")
-                        .WithOne("Patient")
-                        .HasForeignKey("HospitalRegistrySystem.DAL.Entities.Patient", "PatientCardId")
+                    b.HasOne("HospitalRegistrySystem.DAL.Entities.Patient", "Patient")
+                        .WithOne("PatientCard")
+                        .HasForeignKey("HospitalRegistrySystem.DAL.Entities.PatientCard", "PatientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("PatientCard");
+                    b.Navigation("Patient");
                 });
 
             modelBuilder.Entity("HospitalRegistrySystem.DAL.Entities.Schedule", b =>
@@ -271,14 +268,14 @@ namespace HospitalRegistrySystem.DAL.Migrations
                     b.Navigation("Appointments");
 
                     b.Navigation("MedicalConclusions");
+
+                    b.Navigation("PatientCard")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("HospitalRegistrySystem.DAL.Entities.PatientCard", b =>
                 {
                     b.Navigation("MedicalConclusions");
-
-                    b.Navigation("Patient")
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

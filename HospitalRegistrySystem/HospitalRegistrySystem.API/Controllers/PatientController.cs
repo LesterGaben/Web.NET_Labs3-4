@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using HospitalRegistrySystem.BLL.Services.Interfaces;
-using HospitalRegistrySystem.BLL.DTOs.Patient;
+using HospitalRegistrySystem.Common.DTOs.Patient;
 
 
 namespace HospitalRegistrySystem.API.Controllers {

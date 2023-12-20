@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using HospitalRegistrySystem.BLL.DTOs.Schedule;
+using HospitalRegistrySystem.Common.DTOs.Schedule;
 using HospitalRegistrySystem.DAL.Entities;
 
 namespace HospitalRegistrySystem.BLL.MappingProfiles {

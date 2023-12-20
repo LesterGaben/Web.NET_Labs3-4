@@ -1,7 +1,6 @@
-﻿using HospitalRegistrySystem.BLL.DTOs.Doctor;
+﻿using HospitalRegistrySystem.Common.DTOs.Doctor;
 
-namespace HospitalRegistrySystem.BLL.Services.Interfaces
-{
+namespace HospitalRegistrySystem.BLL.Services.Interfaces {
     public interface IDoctorService {
         public Task<IEnumerable<DoctorDTO>> GetAllAsync();
         public Task<DoctorDTO> GetByIdAsync(int id);

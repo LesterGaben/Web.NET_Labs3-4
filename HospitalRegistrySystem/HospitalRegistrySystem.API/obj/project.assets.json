@@ -1182,6 +1182,7 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "AutoMapper": "12.0.1",
+          "HospitalRegistrySystem.Common": "1.0.0",
           "HospitalRegistrySystem.DAL": "1.0.0"
         },
         "compile": {
@@ -1189,6 +1190,16 @@
         },
         "runtime": {
           "bin/placeholder/HospitalRegistrySystem.BLL.dll": {}
+        }
+      },
+      "HospitalRegistrySystem.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/HospitalRegistrySystem.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HospitalRegistrySystem.Common.dll": {}
         }
       },
       "HospitalRegistrySystem.DAL/1.0.0": {
@@ -3387,6 +3398,11 @@
       "path": "../HospitalRegistrySystem.BLL/HospitalRegistrySystem.BLL.csproj",
       "msbuildProject": "../HospitalRegistrySystem.BLL/HospitalRegistrySystem.BLL.csproj"
     },
+    "HospitalRegistrySystem.Common/1.0.0": {
+      "type": "project",
+      "path": "../HospitalRegistrySystem.Common/HospitalRegistrySystem.Common.csproj",
+      "msbuildProject": "../HospitalRegistrySystem.Common/HospitalRegistrySystem.Common.csproj"
+    },
     "HospitalRegistrySystem.DAL/1.0.0": {
       "type": "project",
       "path": "../HospitalRegistrySystem.DAL/HospitalRegistrySystem.DAL.csproj",
@@ -3397,6 +3413,7 @@
     "net7.0": [
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
       "HospitalRegistrySystem.BLL >= 1.0.0",
+      "HospitalRegistrySystem.Common >= 1.0.0",
       "HospitalRegistrySystem.DAL >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 7.0.7",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.14",
@@ -3437,6 +3454,9 @@
           "projectReferences": {
             "C:\\Users\\ARTEM\\Documents\\Projects\\5 semester\\Web.NET_Labs3-4\\HospitalRegistrySystem\\HospitalRegistrySystem.BLL\\HospitalRegistrySystem.BLL.csproj": {
               "projectPath": "C:\\Users\\ARTEM\\Documents\\Projects\\5 semester\\Web.NET_Labs3-4\\HospitalRegistrySystem\\HospitalRegistrySystem.BLL\\HospitalRegistrySystem.BLL.csproj"
+            },
+            "C:\\Users\\ARTEM\\Documents\\Projects\\5 semester\\Web.NET_Labs3-4\\HospitalRegistrySystem\\HospitalRegistrySystem.Common\\HospitalRegistrySystem.Common.csproj": {
+              "projectPath": "C:\\Users\\ARTEM\\Documents\\Projects\\5 semester\\Web.NET_Labs3-4\\HospitalRegistrySystem\\HospitalRegistrySystem.Common\\HospitalRegistrySystem.Common.csproj"
             },
             "C:\\Users\\ARTEM\\Documents\\Projects\\5 semester\\Web.NET_Labs3-4\\HospitalRegistrySystem\\HospitalRegistrySystem.DAL\\HospitalRegistrySystem.DAL.csproj": {
               "projectPath": "C:\\Users\\ARTEM\\Documents\\Projects\\5 semester\\Web.NET_Labs3-4\\HospitalRegistrySystem\\HospitalRegistrySystem.DAL\\HospitalRegistrySystem.DAL.csproj"

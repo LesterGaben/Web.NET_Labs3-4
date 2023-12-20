@@ -1,6 +1,5 @@
-﻿using HospitalRegistrySystem.BLL.DTOs.MedicalConclusion;
-using HospitalRegistrySystem.BLL.DTOs.Schedule;
-using HospitalRegistrySystem.BLL.Services.Interfaces;
+﻿using HospitalRegistrySystem.BLL.Services.Interfaces;
+using HospitalRegistrySystem.Common.DTOs.MedicalConclusion;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HospitalRegistrySystem.API.Controllers {

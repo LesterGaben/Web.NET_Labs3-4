@@ -1,11 +1,10 @@
 ﻿using AutoMapper;
-using HospitalRegistrySystem.BLL.DTOs.Patient;
 using HospitalRegistrySystem.BLL.Services.Interfaces;
+using HospitalRegistrySystem.Common.DTOs.Patient;
 using HospitalRegistrySystem.DAL.Entities;
 using HospitalRegistrySystem.DAL.Repositories.Inerfaces;
 
-namespace HospitalRegistrySystem.BLL.Services
-{
+namespace HospitalRegistrySystem.BLL.Services {
     public class PatientService: IPatientService {
 
         private readonly IGenericRepository<Patient> _repository;

@@ -977,6 +977,16 @@
           }
         }
       },
+      "HospitalRegistrySystem.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/HospitalRegistrySystem.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HospitalRegistrySystem.Common.dll": {}
+        }
+      },
       "HospitalRegistrySystem.DAL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -2656,6 +2666,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "HospitalRegistrySystem.Common/1.0.0": {
+      "type": "project",
+      "path": "../HospitalRegistrySystem.Common/HospitalRegistrySystem.Common.csproj",
+      "msbuildProject": "../HospitalRegistrySystem.Common/HospitalRegistrySystem.Common.csproj"
+    },
     "HospitalRegistrySystem.DAL/1.0.0": {
       "type": "project",
       "path": "../HospitalRegistrySystem.DAL/HospitalRegistrySystem.DAL.csproj",
@@ -2665,6 +2680,7 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "AutoMapper >= 12.0.1",
+      "HospitalRegistrySystem.Common >= 1.0.0",
       "HospitalRegistrySystem.DAL >= 1.0.0"
     ]
   },
@@ -2700,6 +2716,9 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "C:\\Users\\ARTEM\\Documents\\Projects\\5 semester\\Web.NET_Labs3-4\\HospitalRegistrySystem\\HospitalRegistrySystem.Common\\HospitalRegistrySystem.Common.csproj": {
+              "projectPath": "C:\\Users\\ARTEM\\Documents\\Projects\\5 semester\\Web.NET_Labs3-4\\HospitalRegistrySystem\\HospitalRegistrySystem.Common\\HospitalRegistrySystem.Common.csproj"
+            },
             "C:\\Users\\ARTEM\\Documents\\Projects\\5 semester\\Web.NET_Labs3-4\\HospitalRegistrySystem\\HospitalRegistrySystem.DAL\\HospitalRegistrySystem.DAL.csproj": {
               "projectPath": "C:\\Users\\ARTEM\\Documents\\Projects\\5 semester\\Web.NET_Labs3-4\\HospitalRegistrySystem\\HospitalRegistrySystem.DAL\\HospitalRegistrySystem.DAL.csproj"
             }

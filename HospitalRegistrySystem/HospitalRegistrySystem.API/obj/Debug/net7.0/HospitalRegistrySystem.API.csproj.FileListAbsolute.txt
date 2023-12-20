@@ -81,3 +81,5 @@ C:\Users\ARTEM\Documents\Projects\5 semester\Web.NET_Labs3-4\HospitalRegistrySys
 C:\Users\ARTEM\Documents\Projects\5 semester\Web.NET_Labs3-4\HospitalRegistrySystem\HospitalRegistrySystem.API\obj\Debug\net7.0\ref\HospitalRegistrySystem.API.dll
 C:\Users\ARTEM\Documents\Projects\5 semester\Web.NET_Labs3-4\HospitalRegistrySystem\HospitalRegistrySystem.API\obj\Debug\net7.0\HospitalRegistrySystem.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\ARTEM\Documents\Projects\5 semester\Web.NET_Labs3-4\HospitalRegistrySystem\HospitalRegistrySystem.API\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\ARTEM\Documents\Projects\5 semester\Web.NET_Labs3-4\HospitalRegistrySystem\HospitalRegistrySystem.API\bin\Debug\net7.0\HospitalRegistrySystem.Common.dll
+C:\Users\ARTEM\Documents\Projects\5 semester\Web.NET_Labs3-4\HospitalRegistrySystem\HospitalRegistrySystem.API\bin\Debug\net7.0\HospitalRegistrySystem.Common.pdb

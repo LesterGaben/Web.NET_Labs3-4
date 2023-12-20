@@ -1,4 +1,4 @@
-﻿namespace HospitalRegistrySystem.BLL.DTOs.Appointment {
+﻿namespace HospitalRegistrySystem.Common.DTOs.Appointment {
     public class CreateUpdateAppointmentDTO {
         public int DoctorId { get; set; }
         public int? PatientId { get; set; }

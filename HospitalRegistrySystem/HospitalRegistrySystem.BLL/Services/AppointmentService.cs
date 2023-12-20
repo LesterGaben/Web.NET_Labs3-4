@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using HospitalRegistrySystem.BLL.DTOs.Appointment;
+using HospitalRegistrySystem.Common.DTOs.Appointment;
 using HospitalRegistrySystem.BLL.Services.Interfaces;
 using HospitalRegistrySystem.DAL.Entities;
 using HospitalRegistrySystem.DAL.Repositories.Inerfaces;

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using HospitalRegistrySystem.BLL.DTOs.Patient;
+using HospitalRegistrySystem.Common.DTOs.Patient;
 using HospitalRegistrySystem.DAL.Entities;
 
 namespace HospitalRegistrySystem.BLL.MappingProfiles {

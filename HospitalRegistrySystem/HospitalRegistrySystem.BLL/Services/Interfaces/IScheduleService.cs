@@ -1,7 +1,6 @@
-﻿using HospitalRegistrySystem.BLL.DTOs.Schedule;
+﻿using HospitalRegistrySystem.Common.DTOs.Schedule;
 
-namespace HospitalRegistrySystem.BLL.Services.Interfaces
-{
+namespace HospitalRegistrySystem.BLL.Services.Interfaces {
     public interface IScheduleService {
         public Task<IEnumerable<ScheduleDTO>> GetAllAsync();
         public Task<ScheduleDTO> GetByIdAsync(int id);

@@ -1,5 +1,4 @@
 ﻿using HospitalRegistrySystem.DAL.Context;
-using HospitalRegistrySystem.DAL.Entities;
 using HospitalRegistrySystem.DAL.Entities.Abstract;
 using HospitalRegistrySystem.DAL.Repositories.Inerfaces;
 using Microsoft.EntityFrameworkCore;

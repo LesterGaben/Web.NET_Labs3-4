@@ -1,11 +1,10 @@
 ﻿using AutoMapper;
-using HospitalRegistrySystem.BLL.DTOs.MedicalConclusion;
 using HospitalRegistrySystem.BLL.Services.Interfaces;
+using HospitalRegistrySystem.Common.DTOs.MedicalConclusion;
 using HospitalRegistrySystem.DAL.Entities;
 using HospitalRegistrySystem.DAL.Repositories.Inerfaces;
 
-namespace HospitalRegistrySystem.BLL.Services
-{
+namespace HospitalRegistrySystem.BLL.Services {
     public class MedicalConclusionService : IMedicalConclusionService {
         private readonly IGenericRepository<MedicalConclusion> _repository;
         private readonly IMapper _mapper;

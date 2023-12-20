@@ -1,7 +1,6 @@
-﻿using HospitalRegistrySystem.BLL.DTOs.MedicalConclusion;
+﻿using HospitalRegistrySystem.Common.DTOs.MedicalConclusion;
 
-namespace HospitalRegistrySystem.BLL.Services.Interfaces
-{
+namespace HospitalRegistrySystem.BLL.Services.Interfaces {
     public interface IMedicalConclusionService {
         public Task<IEnumerable<MedicalConclusionDTO>> GetAllAsync();
         public Task<MedicalConclusionDTO> GetByIdAsync(int id);

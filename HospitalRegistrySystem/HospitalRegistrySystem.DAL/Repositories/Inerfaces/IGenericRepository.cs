@@ -1,5 +1,4 @@
-﻿
-using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
 
 namespace HospitalRegistrySystem.DAL.Repositories.Inerfaces {
     public interface IGenericRepository<TEntity> : IQueryable<TEntity>, IAsyncEnumerable<TEntity> {

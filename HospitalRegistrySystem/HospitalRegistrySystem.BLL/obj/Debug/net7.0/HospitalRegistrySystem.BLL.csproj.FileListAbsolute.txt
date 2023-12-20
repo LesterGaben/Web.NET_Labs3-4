@@ -14,3 +14,5 @@ C:\Users\ARTEM\Documents\Projects\5 semester\Web.NET_Labs3-4\HospitalRegistrySys
 C:\Users\ARTEM\Documents\Projects\5 semester\Web.NET_Labs3-4\HospitalRegistrySystem\HospitalRegistrySystem.BLL\obj\Debug\net7.0\refint\HospitalRegistrySystem.BLL.dll
 C:\Users\ARTEM\Documents\Projects\5 semester\Web.NET_Labs3-4\HospitalRegistrySystem\HospitalRegistrySystem.BLL\obj\Debug\net7.0\HospitalRegistrySystem.BLL.pdb
 C:\Users\ARTEM\Documents\Projects\5 semester\Web.NET_Labs3-4\HospitalRegistrySystem\HospitalRegistrySystem.BLL\obj\Debug\net7.0\ref\HospitalRegistrySystem.BLL.dll
+C:\Users\ARTEM\Documents\Projects\5 semester\Web.NET_Labs3-4\HospitalRegistrySystem\HospitalRegistrySystem.BLL\bin\Debug\net7.0\HospitalRegistrySystem.Common.dll
+C:\Users\ARTEM\Documents\Projects\5 semester\Web.NET_Labs3-4\HospitalRegistrySystem\HospitalRegistrySystem.BLL\bin\Debug\net7.0\HospitalRegistrySystem.Common.pdb

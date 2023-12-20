@@ -1,4 +1,4 @@
-﻿using HospitalRegistrySystem.BLL.DTOs.Appointment;
+﻿using HospitalRegistrySystem.Common.DTOs.Appointment;
 
 namespace HospitalRegistrySystem.BLL.Services.Interfaces
 {

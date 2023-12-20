@@ -1,6 +1,5 @@
-﻿using HospitalRegistrySystem.BLL.DTOs.PatientCard;
-using HospitalRegistrySystem.BLL.Services;
-using HospitalRegistrySystem.BLL.Services.Interfaces;
+﻿using HospitalRegistrySystem.BLL.Services.Interfaces;
+using HospitalRegistrySystem.Common.DTOs.PatientCard;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HospitalRegistrySystem.API.Controllers {

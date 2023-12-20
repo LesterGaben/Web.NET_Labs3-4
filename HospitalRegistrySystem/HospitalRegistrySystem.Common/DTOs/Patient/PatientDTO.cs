@@ -1,7 +1,5 @@
-﻿namespace HospitalRegistrySystem.BLL.DTOs.Patient
-{
-    public class PatientDTO
-    {
+﻿namespace HospitalRegistrySystem.Common.DTOs.Patient {
+    public class PatientDTO {
         public int PatientId { get; set; }
         public string FullName { get; set; }
         public DateOnly DateOfBirth { get; set; }

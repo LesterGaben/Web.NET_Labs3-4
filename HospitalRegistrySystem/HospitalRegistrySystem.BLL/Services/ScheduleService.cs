@@ -1,11 +1,10 @@
 ﻿using AutoMapper;
-using HospitalRegistrySystem.BLL.DTOs.Schedule;
 using HospitalRegistrySystem.BLL.Services.Interfaces;
+using HospitalRegistrySystem.Common.DTOs.Schedule;
 using HospitalRegistrySystem.DAL.Entities;
 using HospitalRegistrySystem.DAL.Repositories.Inerfaces;
 
-namespace HospitalRegistrySystem.BLL.Services
-{
+namespace HospitalRegistrySystem.BLL.Services {
     public class ScheduleService : IScheduleService {
         private readonly IGenericRepository<Schedule> _repository;
         private readonly IMapper _mapper;

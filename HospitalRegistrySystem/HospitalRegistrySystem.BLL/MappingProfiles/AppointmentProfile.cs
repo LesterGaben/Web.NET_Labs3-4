@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using HospitalRegistrySystem.BLL.DTOs.Appointment;
+using HospitalRegistrySystem.Common.DTOs.Appointment;
 using HospitalRegistrySystem.DAL.Entities;
 
 namespace HospitalRegistrySystem.BLL.MappingProfiles {

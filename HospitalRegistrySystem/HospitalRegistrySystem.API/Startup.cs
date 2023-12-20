@@ -14,7 +14,6 @@ public class Startup {
         Configuration = configuration;
     }
 
-    // Метод для реєстрації сервісів
     public void ConfigureServices(IServiceCollection services) {
         services.AddControllers();
         services.AddEndpointsApiExplorer();
@@ -30,14 +29,11 @@ public class Startup {
         services.AddScoped<IMedicalConclusionService, MedicalConclusionService>();
         services.AddScoped<IPatientCardService, PatientCardService>();
 
-        // Реєстрація GenericRepository
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
-        // Реєстрація AutoMapper
         services.AddAutoMapper(Assembly.GetAssembly(typeof(PatientProfile)));
     }
 
-    // Метод для налаштування конвеєра HTTP-запитів
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
         if (env.IsDevelopment()) {
             app.UseSwagger();

@@ -1,5 +1,5 @@
-﻿using HospitalRegistrySystem.BLL.DTOs.Appointment;
-using HospitalRegistrySystem.BLL.Services.Interfaces;
+﻿using HospitalRegistrySystem.BLL.Services.Interfaces;
+using HospitalRegistrySystem.Common.DTOs.Appointment;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HospitalRegistrySystem.API.Controllers {

@@ -1,6 +1,5 @@
-﻿namespace HospitalRegistrySystem.BLL.DTOs.MedicalConclusion {
-    public class MedicalConclusionDTO {
-        public int MedicalConclusionId { get; set; }
+﻿namespace HospitalRegistrySystem.Common.DTOs.MedicalConclusion {
+    public class CreateMedicalConclusionDTO {
         public int DoctorId { get; set; }
         public int PatientId { get; set; }
         public int? PatientCardId { get; set; }

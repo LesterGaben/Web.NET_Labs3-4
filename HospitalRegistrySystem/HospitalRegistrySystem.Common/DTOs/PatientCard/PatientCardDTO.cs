@@ -1,6 +1,6 @@
-﻿using HospitalRegistrySystem.BLL.DTOs.MedicalConclusion;
+﻿using HospitalRegistrySystem.Common.DTOs.MedicalConclusion;
 
-namespace HospitalRegistrySystem.BLL.DTOs.PatientCard {
+namespace HospitalRegistrySystem.Common.DTOs.PatientCard {
     public class PatientCardDTO {
         public int PatientCardId { get; set; }
         public int PatientId { get; set; }

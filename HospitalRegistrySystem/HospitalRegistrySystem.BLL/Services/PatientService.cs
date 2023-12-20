@@ -34,13 +34,6 @@ namespace HospitalRegistrySystem.BLL.Services
 
         public async Task<PatientDTO> UpdateAsync(int id, CreateUpdatePatientDTO dto) {
             var entity = await _repository.GetByIdAsync(id);
-
-            // Перевірка на існування сутності
-            if (entity == null) {
-                // Обробка випадку, коли сутність не знайдена
-                // Наприклад, можна повернути null або викликати помилку
-            }
-
             _mapper.Map(dto, entity);
             await _repository.UpdateAsync(entity);
 

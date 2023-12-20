@@ -2,16 +2,15 @@
 using HospitalRegistrySystem.BLL.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace HospitalRegistrySystem.API.Controllers
-{
+namespace HospitalRegistrySystem.API.Controllers {
 
     [ApiController]
     [Route("appointments")]
     public class AppointmentController : Controller {
         private readonly IAppointmentService _appointmentService;
 
-        public AppointmentController(IAppointmentService AppointmentService) {
-            _appointmentService = AppointmentService;
+        public AppointmentController(IAppointmentService appointmentService) {
+            _appointmentService = appointmentService;
         }
 
 
@@ -27,13 +26,13 @@ namespace HospitalRegistrySystem.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(CreateUpdateAppointmentDTO patient) {
-            return Ok(await _appointmentService.CreateAsync(patient));
+        public async Task<IActionResult> Create(CreateUpdateAppointmentDTO appointment) {
+            return Ok(await _appointmentService.CreateAsync(appointment));
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update([FromRoute] int id, CreateUpdateAppointmentDTO patient) {
-            return Ok(await _appointmentService.UpdateAsync(id, patient));
+        public async Task<IActionResult> Update([FromRoute] int id, CreateUpdateAppointmentDTO appointment) {
+            return Ok(await _appointmentService.UpdateAsync(id, appointment));
         }
 
         [HttpDelete("{id}")]

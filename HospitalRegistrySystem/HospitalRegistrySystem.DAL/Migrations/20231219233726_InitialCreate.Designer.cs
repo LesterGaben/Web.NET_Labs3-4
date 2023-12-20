@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HospitalRegistrySystem.DAL.Migrations
 {
     [DbContext(typeof(HospitalRegistrySystemContext))]
-    [Migration("20231219193607_InitialCreate")]
+    [Migration("20231219233726_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -39,7 +39,7 @@ namespace HospitalRegistrySystem.DAL.Migrations
                     b.Property<int>("DoctorId")
                         .HasColumnType("int");
 
-                    b.Property<int>("PatientId")
+                    b.Property<int?>("PatientId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -98,7 +98,7 @@ namespace HospitalRegistrySystem.DAL.Migrations
                     b.Property<int>("DoctorId")
                         .HasColumnType("int");
 
-                    b.Property<int>("PatientCardId")
+                    b.Property<int?>("PatientCardId")
                         .HasColumnType("int");
 
                     b.Property<int>("PatientId")
@@ -199,9 +199,7 @@ namespace HospitalRegistrySystem.DAL.Migrations
 
                     b.HasOne("HospitalRegistrySystem.DAL.Entities.Patient", "Patient")
                         .WithMany("Appointments")
-                        .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PatientId");
 
                     b.Navigation("Doctor");
 
@@ -219,8 +217,7 @@ namespace HospitalRegistrySystem.DAL.Migrations
                     b.HasOne("HospitalRegistrySystem.DAL.Entities.PatientCard", "PatientCard")
                         .WithMany("MedicalConclusions")
                         .HasForeignKey("PatientCardId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("HospitalRegistrySystem.DAL.Entities.Patient", "Patient")
                         .WithMany("MedicalConclusions")

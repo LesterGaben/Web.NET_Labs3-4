@@ -1,11 +1,13 @@
 ﻿using HospitalRegistrySystem.DAL.Context;
+using HospitalRegistrySystem.DAL.Entities;
+using HospitalRegistrySystem.DAL.Entities.Abstract;
 using HospitalRegistrySystem.DAL.Repositories.Inerfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Collections;
 using System.Linq.Expressions;
 
 namespace HospitalRegistrySystem.DAL.Repositories {
-    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class {
+    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : BaseEntity  {
 
         private readonly HospitalRegistrySystemContext _context;
         private readonly DbSet<TEntity> _entities;
@@ -40,6 +42,14 @@ namespace HospitalRegistrySystem.DAL.Repositories {
 
         public async Task<TEntity> GetByIdAsync(object id) {
             return await _entities.FindAsync(id);
+        }
+
+        public async Task<IEnumerable<TEntity>> GetAllIncludingAsync(Expression<Func<TEntity, object>> includeProperty) {
+            return await _entities.Include(includeProperty).ToListAsync();
+        }
+
+        public async Task<TEntity> GetByIdIncludingAsync(int id, Expression<Func<TEntity, object>> includeProperty) {
+            return await _entities.Where(e => e.Id == id).Include(includeProperty).SingleOrDefaultAsync();
         }
 
         public async Task AddAsync(TEntity entity) {

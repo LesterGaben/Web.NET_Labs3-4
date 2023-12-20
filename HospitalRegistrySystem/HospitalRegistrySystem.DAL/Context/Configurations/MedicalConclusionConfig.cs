@@ -23,7 +23,8 @@ namespace HospitalRegistrySystem.DAL.Context.Configurations {
             builder.HasOne(mc => mc.PatientCard)
                 .WithMany(pc => pc.MedicalConclusions)
                 .HasForeignKey(mc => mc.PatientCardId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Cascade)
+                .IsRequired(false);
 
             builder.Property(mc => mc.Content)
                 .IsRequired()

@@ -1,10 +1,11 @@
 ﻿using AutoMapper;
-using HospitalRegistrySystem.BLL.DTOs;
+using HospitalRegistrySystem.BLL.DTOs.Schedule;
 using HospitalRegistrySystem.BLL.Services.Interfaces;
 using HospitalRegistrySystem.DAL.Entities;
 using HospitalRegistrySystem.DAL.Repositories.Inerfaces;
 
-namespace HospitalRegistrySystem.BLL.Services {
+namespace HospitalRegistrySystem.BLL.Services
+{
     public class ScheduleService : IScheduleService {
         private readonly IGenericRepository<Schedule> _repository;
         private readonly IMapper _mapper;
@@ -24,16 +25,18 @@ namespace HospitalRegistrySystem.BLL.Services {
             return _mapper.Map<ScheduleDTO>(entity);
         }
 
-        public async Task<int> CreateAsync(ScheduleDTO dto) {
+        public async Task<int> CreateAsync(CreateScheduleDTO dto) {
             var entity = _mapper.Map<Schedule>(dto);
             await _repository.AddAsync(entity);
             return entity.Id;
         }
 
-        public async Task<ScheduleDTO> UpdateAsync(ScheduleDTO dto) {
-            var entity = _mapper.Map<Schedule>(dto);
+        public async Task<ScheduleDTO> UpdateAsync(int id, UpdateScheduleDTO dto) {
+            var entity = await _repository.GetByIdAsync(id);
+            _mapper.Map(dto, entity);
             await _repository.UpdateAsync(entity);
-            return _mapper.Map<ScheduleDTO>(_repository.GetByIdAsync(entity.Id));
+
+            return _mapper.Map<ScheduleDTO>(entity);
         }
 
         public async Task DeleteAsync(int id) {

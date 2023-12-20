@@ -1,10 +1,11 @@
 ﻿using AutoMapper;
-using HospitalRegistrySystem.BLL.DTOs;
+using HospitalRegistrySystem.BLL.DTOs.MedicalConclusion;
 using HospitalRegistrySystem.BLL.Services.Interfaces;
 using HospitalRegistrySystem.DAL.Entities;
 using HospitalRegistrySystem.DAL.Repositories.Inerfaces;
 
-namespace HospitalRegistrySystem.BLL.Services {
+namespace HospitalRegistrySystem.BLL.Services
+{
     public class MedicalConclusionService : IMedicalConclusionService {
         private readonly IGenericRepository<MedicalConclusion> _repository;
         private readonly IMapper _mapper;
@@ -24,16 +25,18 @@ namespace HospitalRegistrySystem.BLL.Services {
             return _mapper.Map<MedicalConclusionDTO>(entity);
         }
 
-        public async Task<int> CreateAsync(MedicalConclusionDTO dto) {
+        public async Task<int> CreateAsync(CreateMedicalConclusionDTO dto) {
             var entity = _mapper.Map<MedicalConclusion>(dto);
             await _repository.AddAsync(entity);
             return entity.Id;
         }
 
-        public async Task<MedicalConclusionDTO> UpdateAsync(MedicalConclusionDTO dto) {
-            var entity = _mapper.Map<MedicalConclusion>(dto);
+        public async Task<MedicalConclusionDTO> UpdateAsync(int id, UpdateMedicalConclusionDTO dto) {
+            var entity = await _repository.GetByIdAsync(id);
+            _mapper.Map(dto, entity);
             await _repository.UpdateAsync(entity);
-            return _mapper.Map<MedicalConclusionDTO>(_repository.GetByIdAsync(entity.Id));
+
+            return _mapper.Map<MedicalConclusionDTO>(entity);
         }
 
         public async Task DeleteAsync(int id) {

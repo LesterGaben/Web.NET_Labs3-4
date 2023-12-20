@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using HospitalRegistrySystem.BLL.DTOs.Appointment;
-using HospitalRegistrySystem.BLL.DTOs.Doctor;
 using HospitalRegistrySystem.BLL.Services.Interfaces;
 using HospitalRegistrySystem.DAL.Entities;
 using HospitalRegistrySystem.DAL.Repositories.Inerfaces;
@@ -34,7 +33,6 @@ namespace HospitalRegistrySystem.BLL.Services
 
         public async Task<AppointmentDTO> UpdateAsync(int id, CreateUpdateAppointmentDTO dto) {
             var entity = await _repository.GetByIdAsync(id);
-
             _mapper.Map(dto, entity);
             await _repository.UpdateAsync(entity);
 

@@ -26,13 +26,13 @@ namespace HospitalRegistrySystem.API.Controllers {
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(CreateUpdateDoctorDTO patient) {
-            return Ok(await _doctorService.CreateAsync(patient));
+        public async Task<IActionResult> Create(CreateUpdateDoctorDTO doctor) {
+            return Ok(await _doctorService.CreateAsync(doctor));
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update([FromRoute] int id, CreateUpdateDoctorDTO patient) {
-            return Ok(await _doctorService.UpdateAsync(id, patient));
+        public async Task<IActionResult> Update([FromRoute] int id, CreateUpdateDoctorDTO doctor) {
+            return Ok(await _doctorService.UpdateAsync(id, doctor));
         }
 
         [HttpDelete("{id}")]

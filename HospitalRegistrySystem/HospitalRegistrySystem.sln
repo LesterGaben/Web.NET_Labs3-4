@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HospitalRegistrySystem.DAL"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalRegistrySystem.Common", "HospitalRegistrySystem.Common\HospitalRegistrySystem.Common.csproj", "{0EEA16F0-8A23-40E3-9046-4C6D2E306AF0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalRegistrySystem.BLL.Tests", "HospitalRegistrySystem.BLL.Tests\HospitalRegistrySystem.BLL.Tests.csproj", "{AFE464C6-34E1-4876-AFA8-478D98A6D53F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{0EEA16F0-8A23-40E3-9046-4C6D2E306AF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0EEA16F0-8A23-40E3-9046-4C6D2E306AF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0EEA16F0-8A23-40E3-9046-4C6D2E306AF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFE464C6-34E1-4876-AFA8-478D98A6D53F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFE464C6-34E1-4876-AFA8-478D98A6D53F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFE464C6-34E1-4876-AFA8-478D98A6D53F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFE464C6-34E1-4876-AFA8-478D98A6D53F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
